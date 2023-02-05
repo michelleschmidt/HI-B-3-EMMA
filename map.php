@@ -1,27 +1,28 @@
 <?php
-$pageTitle = 'Form';
-include("base.php");
-include("data/data.php");
+    $pageTitle = 'Karte';
+    include("templates/base.php");
+    include("data/mapdata.php");
 
-$results = $db->query('SELECT * FROM qrpatients');
-$locations = array();
-while ($row = $results->fetchArray()) {
-    $locations[] = array(
-        'qr' => $row['qr'],
-        'farbe' => $row['farbe'],
-        'latitude' => $row['latitude'],
-        'longitude' => $row['longitude'],
-        'name' => $row['name'],
-        'vorname' => $row['vorname'],
-        'kurzdiagnose' => $row['kurzdiagnose']
-    );
-}
-$locations_json = json_encode($locations);
-echo "<script>var locations = " . $locations_json . ";</script>";
+    $results = $db->query('SELECT latitude, longitude, farbe, qr, kurzdiagnose, name, vorname FROM qrpatients');
+    $locations = array();
+    while ($row = $results->fetchArray()) {
+        $locations[] = array(
+            'qr' => $row['qr'],
+            'farbe' => $row['farbe'],
+            'latitude' => $row['latitude'],
+            'longitude' => $row['longitude'],
+            'name' => $row['name'],
+            'vorname' => $row['vorname'],
+            'kurzdiagnose' => $row['kurzdiagnose']
+        );
+    }
+    $locations_json = json_encode($locations);
+    echo "<script>var locations = " . $locations_json . ";</script>";
 ?>
 
 <body>
     <h1> Patientenübersicht </h1>
+    
     <div id="map" style="width: 100%; height: 500px;"></div>
         
     <h3>Legende:</h3> 

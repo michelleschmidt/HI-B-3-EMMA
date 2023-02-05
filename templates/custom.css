@@ -1,0 +1,190 @@
+
+
+/* Main Heading and Nav menu */
+[data-target="#mainMenu"] {
+  position: relative;
+  z-index: 999;
+}
+
+header{
+       background:  rgb(192, 219, 224);
+
+    }
+
+#mainMenu li > a {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: rgb(73, 130, 144);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  
+}
+
+.main-header.fixed-nav #mainMenu li > a {
+  color: rgb(73, 130, 144);
+  text-decoration: none;
+}
+
+#mainMenu li:not(:last-of-type) {
+  margin-right: 30px;
+}
+
+#mainMenu li > a::before {
+  position: absolute;
+  content: "";
+  width: calc(100% - 1px);
+  height: 1px;
+  background: rgb(73, 130, 144);
+  bottom: -6px;
+  left: 0;
+
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+  z-index: -1;
+
+  -webkit-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+#mainMenu li > a:hover::before,
+#mainMenu li > a.active::before {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.main-header.fixed-nav #mainMenu li > a::before {
+  background: rgb(73, 130, 144);
+}
+
+.main-header {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  color: rgb(73, 130, 144);
+  font-size: 20px;
+}
+
+.main-header.fixed-nav {
+  top: 0;
+  background: rgb(73, 130, 144);
+  -webkit-box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.09);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.main-header.fixed-nav .navbar-brand > img:last-of-type {
+  display: block;
+}
+
+.main-header.fixed-nav .navbar-brand > img:first-of-type {
+  display: none;
+}
+.navbar-brand {
+  color: rgb(73, 130, 144);
+}
+.main-header .navbar-brand img {
+  max-width: 350px;
+  animation: fadeInLeft 0.4s both 0.4s;
+}
+
+/* Body and Headings*/
+body {
+  background:  rgb(248, 248, 248) !important;
+  color: rgb(0, 0, 0);
+  padding-top: 80px;
+  }
+
+  h1 {
+    color: rgb(73, 130, 144);
+    font-size: 40px;
+    font-weight: 100;
+    padding-bottom: 8px;
+    text-align: center;
+  }
+
+  h2 {
+    color: rgb(73, 130, 144);
+    font-size: 30px;
+    font-weight: 100 !important;
+    padding-bottom: 8px;
+    padding-top: 24px;
+  }
+  h3 {
+    color: rgb(73, 130, 144);
+    font-size: 20px;
+    font-weight: 100 !important;
+    padding-bottom: 8px;
+    padding-top: 28px;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  
+    
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+      }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  #container {
+    max-width:100%;
+    aspect-ratio: 100/29;
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+  }
+  
+ button {
+  color:rgb(73, 130, 144) !important
+ }
+
+ .resizedText {
+  width: 90%;
+  height: 200px;
+}
+
+#map {
+  width: 100%; 
+  height: 500px;
+}
+
+dl{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 200px;
+  padding: 0px 10px;
+  }
+
+dl dt{
+  display: inline-block;
+  width: 0px;
+}
+dl dd{
+  display: inline-block;
+  margin: 0px 70px;
+  padding-bottom: 0;
+}
+
+  .marker-image {
+    max-width: 600px;
+  }
